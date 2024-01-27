@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TempestTracker</title>
     <script src="https://kit.fontawesome.com/de9ca8d89e.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,7 +27,15 @@
         </div>
         <div class="place">--</div>
     </div>
-    <div class="right-half"></div>
+    <div class="right-half">
+        <div class="day-selector">
+            <div class="today option selected">Today</div>
+            <div class="tomorrow option">Tomorrow</div>
+        </div>
+        <div class="card-grid"></div>
+        <div class="courtesy">Data courtesy of <span style="color: var(--primary-300);" ><a href="https://www.weatherapi.com/">Weatherapi</a></span>.</div>
+    </div>
+    <div class="github"><a href="https://github.com/Oreniscool"><i class="fa-brands fa-github-alt"></i></a></div>
     <script src="script.js"></script>
 </body>
 </html>

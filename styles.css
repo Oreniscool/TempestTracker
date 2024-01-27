@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 :root {
     --text-50: rgb(230, 239, 254);
     --text-100: rgb(205, 223, 254);
@@ -63,15 +64,17 @@
 
 html, body {
     margin: 0px;
-    height: 100vh;
 }
 
 body {
     display: flex;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .left-half {
     flex: 1;
+    min-width: 250px;
     padding: 1.5%;
     display: flex;
     flex-direction: column;
@@ -82,7 +85,11 @@ body {
 
 .right-half {
     flex: 3;
+    overflow-y: auto;
     background-color: var(--background-950);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
 }
 
 .city-input {
@@ -168,4 +175,157 @@ form,button {
     color: var(--text-200);
     font-size: 1.3rem;
     text-align: center;
+}
+
+
+.day-selector {
+    display: flex;
+    padding-left: 2rem;
+    gap: 3rem;
+}
+.option {
+    font-family: 'Lato', sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.5rem;
+    transition: color 300ms ease-in-out;
+    cursor: pointer;
+}
+.option:hover {
+    color: var(--text-50);
+}
+
+.selected {
+    color: var(--text-50);
+}
+
+.courtesy {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-50);
+}
+
+a:link {
+    color: inherit;
+    text-decoration: none;
+}
+  
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+  
+a:active {
+    color: inherit;
+    text-decoration: underline;
+}
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 3rem;
+    column-gap: 2rem;
+    padding: 3%;
+    width: 84%;
+}
+
+.card {
+    font-family: 'Montserrat', sans-serif;
+    width: max(200px, 18vw);
+    height: max(130px, 20vh);
+    background-color: var(--primary-300);
+    border-radius: 1rem;
+    color: var(--text-50);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.card-title, .card-content, .card-sub-text {
+    padding-left: 1rem;
+}
+
+.card-title {
+    color: var(--text-100);
+    font-size: 1.2rem;
+}
+
+.card-content {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 600;
+
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    gap:1vh;
+    width: 80%;
+}
+.maxmin {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.rise-set-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-size: 1.3rem;
+}
+
+.github {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 2rem;
+    color: var(--primary-300);
+    transition: all 300ms ease-in-out;
+}
+.github:hover {
+    transform: scale(1.3);
+    color: var(--accent-200);
+}
+
+
+@media only screen and (max-width:860px) {
+    body {
+        flex-direction: column;
+    }
+    .day-selector {
+        padding-left: 0px;
+    }
+    .left-half {
+        gap: 3rem;
+    }
+    .right-half {
+        align-items: center;
+        overflow-y: hidden;
+    }
+    .card-grid {
+        justify-self: center;
+    }
+    .card {
+        min-width: 250px;
+    }
+
+}
+
+@media only screen and (max-width:570px) {
+    .card-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
 }

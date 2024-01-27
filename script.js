@@ -179,7 +179,7 @@ const citySearch = document.querySelector('.city-search');
 
 
 async function getForecast(city,days) {
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=4b981c0db24644f78cc160529242301&q=${city}&days=${days}`, {mode: 'cors'});
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4b981c0db24644f78cc160529242301&q=${city}&days=${days}`, {mode: 'cors'});
     const forecastData = await response.json();
     return forecastData;
 }
